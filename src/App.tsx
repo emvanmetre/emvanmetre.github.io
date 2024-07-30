@@ -9,18 +9,18 @@ import Home from './pages'
 import './App.css'
 
 function App() {
-    return (
-        <Router>
-            <Navbar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/about" element={<Home />} />
-                <Route path="/contact" element={<Home />} />
-                <Route path="/blogs" element={<Home />} />
-                <Route path="/sign-up" element={<Home />} />
-            </Routes>
-        </Router>
-    )
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<Home />} />
+        <Route path="/contact" element={<Home />} />
+        <Route path="/blogs" element={<Home />} />
+        <Route path="/sign-up" element={<Home />} />
+      </Routes>
+    </Router>
+  )
 }
 
 export default App
