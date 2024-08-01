@@ -1,0 +1,20 @@
+.text {
+    color: black;
+    font-size: 18px;
+    font-family: DM Sans;
+    font-weight: 400;
+}
+
+.heading {
+    color: black;
+    font-size: 36px;
+    font-family: Red Hat Display;
+    font-weight: 900;
+}
+
+.accent {
+    color: black;
+    font-size: 18px;
+    font-family: DM Mono;
+    font-weight: 400;
+}
