@@ -46,7 +46,7 @@ const Colors = {
         '100': '#F8F6F3',
         '200': '#F7F3EC',
     },
-};
+}
 
-export const SemColors = {};
-export default Colors;
+export const SemColors = {}
+export default Colors
