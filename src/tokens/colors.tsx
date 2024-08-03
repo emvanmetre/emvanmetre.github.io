@@ -43,8 +43,10 @@ const Colors = {
     },
     // Creams
     cream: {
-        '100': '#F8F6F3',
-        '200': '#F7F3EC',
+        '100': '#FFFEFC',
+        '200': '#FDFBF7',
+        '300': '#F8F5EF',
+        '400': '#F7F3EC',
     },
 }
 
