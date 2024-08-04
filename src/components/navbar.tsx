@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "../styles/navbar.css";
+import "../styles/navbar.scss";
 
 const Navbar = () => {
+    const classNames = new Set(['nav'])
     return (
-        <nav className="navbar">
+        <nav className={classNames.toString()}>
             <NavLink to="/" className="nav-logo">
-                NavBar
+                Elizabeth Van Metre
             </NavLink>
         </nav>
     )
