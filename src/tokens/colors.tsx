@@ -50,6 +50,4 @@ const Colors = {
         '500': '#EDE8E2',
     },
 }
-
-export const SemColors = {}
 export default Colors

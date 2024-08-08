@@ -1,3 +1,3 @@
-import Colors, { SemColors } from './colors'
+import colors from './colors'
 
-export { Colors, SemColors }
+export { colors }
