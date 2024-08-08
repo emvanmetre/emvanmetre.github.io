@@ -14,9 +14,9 @@ const tokensToCss = (object = {}, base = `-`) =>
     return css + tokensToCss(value, newBase)
   }, ``)
 
-const saveTokens = async (filename, tokens) => {
+const saveTokens = async (filepath, filename, tokens, filetype) => {
   try {
-    await writeFile(`build/${filename}.css`, tokens)
+    await writeFile(`${filepath}/${filename}.${filetype}`, tokens)
   } catch (e) {
     console.log("There was an error while saving a file.\n", e)
   }
@@ -24,8 +24,11 @@ const saveTokens = async (filename, tokens) => {
 
 try {
     const cssVariables = tokensToCss(tokens)
+    const scssClass = cssVariables.replace(/:.*$/gm, '').replace(/^(?=-).*$/gm, (line) => {
+      return '$' + line.replace(/--/, '') + ': var(' + line + ');'})
+    saveTokens('src/styles', 'tokens', scssClass, 'scss')
     const cssClass = `:root {\n${cssVariables.replaceAll("--", "  --")}}\n`
-    saveTokens('tokens', cssClass)
+    saveTokens('build', 'tokens', cssClass, 'css')
 
     let result = ''
     fs.readdir(path.join('src/styles/'), function (err, files) {
@@ -39,7 +42,7 @@ try {
           result = result + sass.compile(`src/styles/${file}`, {style: "compressed"}).css;
       });
       // console.log(result); 
-      saveTokens('style', result)
+      saveTokens('build', 'style', result, 'css')
   });
   } catch (e) {
     console.log(

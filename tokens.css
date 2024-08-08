@@ -1,0 +1,37 @@
+:root {
+  --colors-blue-100: #F7FAFF;
+  --colors-blue-200: #D0DEFA;
+  --colors-blue-300: #A6BFF0;
+  --colors-blue-400: #7B9DDF;
+  --colors-blue-500: #5278C5;
+  --colors-blue-600: #2D54A1;
+  --colors-blue-700: #103173;
+  --colors-blue-800: #001540;
+  --colors-pink-100: #FFEDFC;
+  --colors-pink-200: #FAD7F4;
+  --colors-pink-300: #EDBCE5;
+  --colors-pink-400: #D79CCD;
+  --colors-pink-500: #B376A9;
+  --colors-pink-600: #87507E;
+  --colors-purple-100: #F7F0FF;
+  --colors-purple-200: #EFE3FC;
+  --colors-purple-300: #E5D4F5;
+  --colors-purple-400: #D6C2EB;
+  --colors-purple-500: #C3ACDB;
+  --colors-purple-600: #AB93C4;
+  --colors-purple-700: #8F76A7;
+  --colors-purple-800: #715B87;
+  --colors-gray-100: #FFFFFF;
+  --colors-gray-200: #F1F3F8;
+  --colors-gray-300: #DDE2EB;
+  --colors-gray-400: #C2C8D4;
+  --colors-gray-500: #9EA4B2;
+  --colors-gray-600: #6F7682;
+  --colors-gray-700: #383C44;
+  --colors-gray-800: #000000;
+  --colors-cream-100: #FFFEFC;
+  --colors-cream-200: #FDFBF7;
+  --colors-cream-300: #F8F5EF;
+  --colors-cream-400: #F7F3EC;
+  --colors-cream-500: #EDE8E2;
+}

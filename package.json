@@ -20,8 +20,9 @@
     },
     "scripts": {
         "deploy": "gh-pages -d build",
-        "start": "react-scripts start",
-        "build": "react-scripts build && npx tsc --outDir ./build && node scripts-js/export-tokens.js",
+        "start": "react-scripts start && npm run build",
+        "build": "react-scripts build && npm run ts-build && node scripts-js/export-tokens.js",
+        "ts-build": "npx tsc --outDir ./build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "format": "npx prettier --write ."
