@@ -1,35 +1,37 @@
-const { writeFile } = require("node:fs/promises");
-const tokens = require('../build/tokens/index');
-
+const { writeFile } = require('node:fs/promises')
+const tokens = require('../build/tokens/index')
 
 const tokensToCss = (object = {}, base = `-`) =>
-  Object.entries(object).reduce((css, [key, value]) => {
-    let newBase = base + `-${key}`
-    if (typeof value !== "object") {
-      return css + newBase + `: ${value};\n`
-    }
-    return css + tokensToCss(value, newBase)
-  }, ``)
+    Object.entries(object).reduce((css, [key, value]) => {
+        let newBase = base + `-${key}`
+        if (typeof value !== 'object') {
+            return css + newBase + `: ${value};\n`
+        }
+        return css + tokensToCss(value, newBase)
+    }, ``)
 
 const saveTokens = async (filepath, filename, tokens, filetype) => {
-  try {
-    await writeFile(`${filepath}/${filename}.${filetype}`, tokens)
-  } catch (e) {
-    console.log("There was an error while saving a file.\n", e)
-  }
+    try {
+        await writeFile(`${filepath}/${filename}.${filetype}`, tokens)
+    } catch (e) {
+        console.log('There was an error while saving a file.\n', e)
+    }
 }
 
 try {
     const cssVariables = tokensToCss(tokens)
-    const cssClass = `:root {\n${cssVariables.replaceAll("--", "  --")}}\n`
+    const cssClass = `:root {\n${cssVariables.replaceAll('--', '  --')}}\n`
     saveTokens('build', 'tokens', cssClass, 'css')
-    const scssClass = cssVariables.replace(/:.*$/gm, '').replace(/^(?=-).*$/gm, (line) => {
-      return '$' + line.replace(/--/, '') + ': var(' + line + ');'})
+    saveTokens('src', 'tokens', cssClass, 'css')
+    const scssClass = cssVariables
+        .replace(/:.*$/gm, '')
+        .replace(/^(?=-).*$/gm, (line) => {
+            return '$' + line.replace(/--/, '') + ': var(' + line + ');'
+        })
     saveTokens('src/styles', 'tokens', scssClass, 'scss')
-
-  } catch (e) {
+} catch (e) {
     console.log(
-      "Provide a correct argument - a relative path to design tokens.\n",
-      e
+        'Provide a correct argument - a relative path to design tokens.\n',
+        e
     )
-  }
+}

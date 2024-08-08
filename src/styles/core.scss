@@ -1,0 +1,6 @@
+@use './tokens.scss';
+
+:focus {
+    outline: tokens.$size-spacing-2 solid tokens.$colors-blue-500;
+    outline-offset: tokens.$size-spacing-2;
+}
