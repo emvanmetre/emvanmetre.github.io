@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
-import "../styles/navbar.scss";
+import React, { useState } from 'react'
+import { NavLink } from 'react-router-dom'
+import '../styles/navbar.scss'
 
 const Navbar = () => {
     const classNames = new Set(['nav'])
