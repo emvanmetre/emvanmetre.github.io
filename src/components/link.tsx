@@ -23,17 +23,17 @@ type LinkProps = {
 }
 
 const Link = (props: LinkProps) => {
-    const classNames = `link${props.darkMode ? ' link-dark' : ''}${props.size ? ' link-' + props.size : ''}`
+    const classNames = `${Text({size: props.size, font: props.font})} link${props.darkMode ? ' dark-mode' : ''}`
     if ( props.type === 'nav') {
         return (
-            <NavLink to={props.to} className={`${classNames} nav-link ${Text({})}`} target='_self'>
+            <NavLink to={props.to} className={`${classNames} nav-link`} target='_self' aria-label={props.ariaLabel}>
                 {props.children}
             </NavLink>
         )
     }
     else {
         return (
-            <AriaLink href={props.to} className={classNames} target={props.target}>
+            <AriaLink href={props.to} className={classNames} target={props.target ?? '_self'} aria-label={props.ariaLabel}>
                 {props.children}
             </AriaLink>
         )

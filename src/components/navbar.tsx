@@ -3,11 +3,10 @@ import { Link, Icon } from './index'
 import '../styles/navbar.scss'
 
 const Navbar = () => {
-    const classNames = new Set(['nav'])
     return (
-        <nav className={classNames.toString()}>
+        <nav className={`nav`}>
             <Icon svg="logo" color="purple" size="md" />
-            <Link to="/" type="nav">
+            <Link to="/" type="nav" font="display" size="xs">
                 Elizabeth Van Metre
             </Link>
             <Link to="/about" type="nav">

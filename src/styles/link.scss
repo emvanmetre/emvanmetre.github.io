@@ -2,23 +2,14 @@
 
 .link {
 
-
-    &.link-dark {
-        background: tokens.$colors-cream-200;
-    }
-
-    &.link-sm {
-        height: 8rem;
-        width: 12rem;
-        border-radius: tokens.$size-spacing-32;
-    }
+    color: tokens.$colors-purple-600;
 
     &:hover {
-        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.10);
+        color: tokens.$colors-purple-400;
     }
 
     &:active {
-        background-color: tokens.$colors-cream-300;
+        color: tokens.$colors-purple-500;
     }
 
 }

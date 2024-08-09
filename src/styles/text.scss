@@ -1,7 +1,6 @@
 @use './tokens.scss';
 
 .text {
-    color: black;
     font-size: tokens.$size-text-18;
     font-family: 'DM Sans';
     font-weight: 400;
@@ -31,7 +30,6 @@
 }
 
 .text-display {
-    color: black;
     font-size: 36px;
     font-family: 'Red Hat Display';
     font-weight: 900;
@@ -60,7 +58,6 @@
 }
 
 .text-accent {
-    color: black;
     font-size: tokens.$size-text-18;
     font-family: 'DM Mono';
     font-weight: 400;
