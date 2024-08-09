@@ -1,6 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import { Link as AriaLink } from 'react-aria-components'
+import { Text } from './index'
 import '../style.css'
 
 /**
@@ -15,6 +16,7 @@ type LinkProps = {
     to: string
     target? : '_self' | '_blank' | '_parent'
     size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
+    font?: 'body' | 'accent' | 'display'
     type?: 'standard' | 'nav'
     ariaLabel?: string
     children?: React.ReactNode
@@ -24,7 +26,7 @@ const Link = (props: LinkProps) => {
     const classNames = `link${props.darkMode ? ' link-dark' : ''}${props.size ? ' link-' + props.size : ''}`
     if ( props.type === 'nav') {
         return (
-            <NavLink to={props.to} className={`${classNames} nav-link`} target='_self'>
+            <NavLink to={props.to} className={`${classNames} nav-link ${Text({})}`} target='_self'>
                 {props.children}
             </NavLink>
         )

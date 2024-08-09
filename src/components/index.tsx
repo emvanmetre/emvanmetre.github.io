@@ -1,4 +1,6 @@
 import Navbar from './navbar'
 import Link from './link'
+import Text from './text'
+import Icon from './icon'
 
-export { Navbar, Link }
+export { Icon, Link, Navbar, Text }

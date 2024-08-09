@@ -5,27 +5,28 @@
     font-size: tokens.$size-text-18;
     font-family: 'DM Sans';
     font-weight: 400;
+    text-decoration: none;
 
-    &.2xs {
-        font-size: tokens.$size-text-23;
+    &.xxs {
+        font-size: tokens.$size-text-12;
     }
     &.xs {
-        font-size: tokens.$size-text-29;
+        font-size: tokens.$size-text-16;
     }
     &.sm {
-        font-size: tokens.$size-text-36;
+        font-size: tokens.$size-text-18;
     }
     &.md {
-        font-size: tokens.$size-text-45;
+        font-size: tokens.$size-text-23;
     }
     &.lg {
-        font-size: tokens.$size-text-56;
+        font-size: tokens.$size-text-29;
     }
     &.xl {
-        font-size: tokens.$size-text-70;
+        font-size: tokens.$size-text-36;
     }
-    &.2xl {
-        font-size: tokens.$size-text-88;
+    &.xxl {
+        font-size: tokens.$size-text-45;
     }
 }
 
@@ -35,7 +36,7 @@
     font-family: 'Red Hat Display';
     font-weight: 900;
 
-    &.2xs {
+    &.xxs {
         font-size: tokens.$size-text-23;
     }
     &.xs {
@@ -53,7 +54,7 @@
     &.xl {
         font-size: tokens.$size-text-70;
     }
-    &.2xl {
+    &.xxl {
         font-size: tokens.$size-text-88;
     }
 }
