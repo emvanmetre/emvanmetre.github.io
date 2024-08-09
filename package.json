@@ -22,8 +22,8 @@
     "scripts": {
         "deploy": "gh-pages -d build",
         "start": "npm run build && react-scripts start",
-        "build": "npm run ts-build && node scripts-js/export-tokens.js && node scripts-js/compile-scss.js && react-scripts build",
-        "ts-build": "npx tsc --outDir ./build",
+        "build": "npm run style-build && react-scripts build",
+        "style-build": "npx tsc --outDir ./build && node scripts-js/export-tokens.js && node scripts-js/compile-scss.js",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "format": "npx prettier --write ."
