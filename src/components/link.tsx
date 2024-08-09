@@ -23,7 +23,7 @@ type LinkProps = {
 }
 
 const Link = (props: LinkProps) => {
-    const classNames = `${Text({size: props.size, font: props.font})} link${props.darkMode ? ' dark-mode' : ''}`
+    const classNames = `${Text({size: props.size, font: props.font, darkMode: props.darkMode})} link${props.darkMode ? ' dark-mode' : ''}`
     if ( props.type === 'nav') {
         return (
             <NavLink to={props.to} className={`${classNames} nav-link`} target='_self' aria-label={props.ariaLabel}>

@@ -2,6 +2,7 @@ import React from 'react'
 import Card from '../components/card'
 
 const Home = () => {
+    document.body.classList.add('dark-mode')
     return (
         <div>
             <h1>Welcome to GeeksforGeeks</h1>
