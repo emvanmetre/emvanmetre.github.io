@@ -1,11 +1,31 @@
+@use './tokens.scss';
+
 .text {
     color: black;
-    font-size: 18px;
+    font-size: tokens.$size-text-18;
     font-family: 'DM Sans';
     font-weight: 400;
 
+    &.2xs {
+        font-size: tokens.$size-text-23;
+    }
     &.xs {
-        font-size: 0px;
+        font-size: tokens.$size-text-29;
+    }
+    &.sm {
+        font-size: tokens.$size-text-36;
+    }
+    &.md {
+        font-size: tokens.$size-text-45;
+    }
+    &.lg {
+        font-size: tokens.$size-text-56;
+    }
+    &.xl {
+        font-size: tokens.$size-text-70;
+    }
+    &.2xl {
+        font-size: tokens.$size-text-88;
     }
 }
 
@@ -15,14 +35,60 @@
     font-family: 'Red Hat Display';
     font-weight: 900;
 
+    &.2xs {
+        font-size: tokens.$size-text-23;
+    }
     &.xs {
-        font-size: 0px;
+        font-size: tokens.$size-text-29;
+    }
+    &.sm {
+        font-size: tokens.$size-text-36;
+    }
+    &.md {
+        font-size: tokens.$size-text-45;
+    }
+    &.lg {
+        font-size: tokens.$size-text-56;
+    }
+    &.xl {
+        font-size: tokens.$size-text-70;
+    }
+    &.2xl {
+        font-size: tokens.$size-text-88;
     }
 }
 
 .text-accent {
     color: black;
-    font-size: 18px;
+    font-size: tokens.$size-text-18;
     font-family: 'DM Mono';
     font-weight: 400;
+}
+
+.text-black {
+    font-weight: 900;
+}
+
+.text-bold {
+    font-weight: 700;
+}
+
+.text-semibold {
+    font-weight: 600;
+}
+
+.text-medium {
+    font-weight: 500;
+}
+
+.text-regular {
+    font-weight: 400;
+}
+
+.text-light {
+    font-weight: 300;
+}
+
+.text-italic {
+    font-style: italic;
 }
