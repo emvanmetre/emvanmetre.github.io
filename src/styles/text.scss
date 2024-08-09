@@ -3,16 +3,24 @@
     font-size: 18px;
     font-family: 'DM Sans';
     font-weight: 400;
+
+    &.xs {
+        font-size: 0px;
+    }
 }
 
-.display {
+.text-display {
     color: black;
     font-size: 36px;
     font-family: 'Red Hat Display';
     font-weight: 900;
+
+    &.xs {
+        font-size: 0px;
+    }
 }
 
-.accent {
+.text-accent {
     color: black;
     font-size: 18px;
     font-family: 'DM Mono';

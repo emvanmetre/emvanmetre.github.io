@@ -10,19 +10,16 @@ import './App.css'
 
 function App() {
     return (
-        <>
-            <Router>
-                <Navbar />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/about" element={<Home />} />
-                    <Route path="/contact" element={<Home />} />
-                    <Route path="/blogs" element={<Home />} />
-                    <Route path="/sign-up" element={<Home />} />
-                </Routes>
-            </Router>
-            <Home />
-        </>
+        <Router>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<Home />} />
+                <Route path="/contact" element={<Home />} />
+                <Route path="/blogs" element={<Home />} />
+                <Route path="/sign-up" element={<Home />} />
+            </Routes>
+        </Router>
     )
 }
 

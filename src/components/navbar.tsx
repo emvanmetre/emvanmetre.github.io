@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import {Link} from './index'
 import '../styles/navbar.scss'
 
 const Navbar = () => {
     const classNames = new Set(['nav'])
     return (
         <nav className={classNames.toString()}>
-            <NavLink to="/" className="nav-logo">
+            <Link to="/" type="nav">
                 Elizabeth Van Metre
-            </NavLink>
+            </Link>
+            <Link to="/about" type="nav">
+                About
+            </Link>
         </nav>
     )
 }

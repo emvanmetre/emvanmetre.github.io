@@ -1,19 +1,13 @@
 @use './tokens.scss';
 
-.card {
-    padding: tokens.$size-spacing-32;
-    border-radius: tokens.$size-spacing-16;
-    border: tokens.$size-spacing-1 solid #EDE8E2;
-    background-color: tokens.$colors-cream-200;
-    justify-content: center;
-    align-items: center;
-    display: inline-flex;
+.link {
+    
 
-    &.card-dark {
+    &.link-dark {
         background: tokens.$colors-cream-200;
     }
 
-    &.card-standard {
+    &.link-sm {
         height: 8rem;
         width: 12rem;
         border-radius: tokens.$size-spacing-32;

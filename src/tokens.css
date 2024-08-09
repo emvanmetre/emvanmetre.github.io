@@ -41,4 +41,14 @@
   --size-spacing-16: 1rem;
   --size-spacing-32: 2rem;
   --size-spacing-none: 0rem;
+  --size-text-12: 0.75rem;
+  --size-text-16: 1rem;
+  --size-text-18: 1.125rem;
+  --size-text-23: 1.4375rem;
+  --size-text-29: 1.8215rem;
+  --size-text-36: 2.25rem;
+  --size-text-45: 2.8125rem;
+  --size-text-56: 3.5rem;
+  --size-text-70: 4.375rem;
+  --size-text-88: 5.5rem;
 }
