@@ -23,12 +23,18 @@ try {
     const cssClass = `:root {\n${cssVariables.replaceAll('--', '  --')}}\n`
     saveTokens('build', 'tokens', cssClass, 'css')
     saveTokens('src', 'tokens', cssClass, 'css')
-    const scssClass = cssVariables
+    const scssTokenClass = cssVariables
         .replace(/:.*$/gm, '')
         .replace(/^(?=-).*$/gm, (line) => {
             return '$' + line.replace(/--/, '') + ': var(' + line + ');'
         })
-    saveTokens('src/styles', 'tokens', scssClass, 'scss')
+    const scssMapClass = `$token-map: (\n${cssVariables
+        .replace(/:.*$/gm, '')
+        .replace(/^(?=-).*$/gm, (line) => {
+            return '\'-' + line.replace(/--/, '') + '\': var(' + line + '),'
+        })}\n)`
+    saveTokens('src/styles', 'tokens', scssTokenClass, 'scss')
+    saveTokens('src/styles', 'token-map', scssMapClass, 'scss')
 } catch (e) {
     console.log(
         'Provide a correct argument - a relative path to design tokens.\n',

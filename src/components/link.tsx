@@ -15,8 +15,6 @@ type LinkProps = {
     darkMode?: boolean
     to: string
     target? : '_self' | '_blank' | '_parent'
-    size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl'
-    font?: 'body' | 'accent' | 'display'
     type?: 'standard' | 'nav'
     ariaLabel?: string
     children?: React.ReactNode

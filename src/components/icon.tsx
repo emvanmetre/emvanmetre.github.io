@@ -1,11 +1,13 @@
 type IconProps = {
     svg: string
-    color: string
+    color?: string
     size?: 'sm' | 'md' | 'lg'
 }
 
 const Icon = (props: IconProps) => {
-    return(<div className={`icon icon-${props.svg} icon-color-${props.color}${props.size ? ' ' + props.size : ''}`}></div>)
+    const colorClass = props.color ? ` icon-color-${props.color}` : ''
+    const sizeClass = props.size ? ' ' + props.size : ''
+    return(<div className={`icon icon-${props.svg}${colorClass}${sizeClass}`}></div>)
 }
 
 export default Icon
