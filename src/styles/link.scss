@@ -3,6 +3,8 @@
 .link {
 
     color: tokens.$colors-purple-600;
+    display: flex;
+    flex-direction: row;
 
     &:hover {
         color: tokens.$colors-purple-400;

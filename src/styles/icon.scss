@@ -2,11 +2,15 @@
 @use './tokens.scss';
 
 $-icon-name-svg-map: (
-  '-logo': constants.$icon-logo
+  '-logo': constants.$icon-logo,
+  '-menu': constants.$icon-menu,
 );
 
 $-icon-color-token-map: (
+  '-darkpurple': tokens.$colors-purple-800,
   '-purple': tokens.$colors-purple-600,
+  '-medpurple': tokens.$colors-purple-500,
+  '-lightpurple': tokens.$colors-purple-100,
   '-white': tokens.$colors-purple-0,
 );
 

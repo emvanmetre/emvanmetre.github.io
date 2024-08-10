@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link, Icon, Menu } from './index'
+import { Link, Icon, Menu, MenuItem } from './index'
 import '../styles/navbar.scss'
 
 const Navbar = () => {
@@ -12,7 +12,11 @@ const Navbar = () => {
             <Link to="/about" type="nav">
                 About
             </Link>
-            <Menu icon='logo'></Menu>
+            <Menu icon='menu' buttonColor='blank'>
+                <MenuItem>
+                
+                </MenuItem>
+            </Menu>
         </nav>
     )
 }

@@ -1,17 +1,35 @@
-type TextProps = {
+import { Text as AriaText } from "react-aria-components"
+import type { TextProps as AriaTextProps } from "react-aria-components"
+
+
+interface TextProps<T>
+  extends Omit<AriaTextProps, 'children'> {
     size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     font?: 'body' | 'accent' | 'display'
     color?: 'primary' | 'secondary' | 'accent'
     darkMode?: boolean
+  children?: React.ReactNode
 }
 
-
-const Text = (props: TextProps) => {
-    const size = props.size ? ` ${props.size}` : ''
-    const font = props.font === 'body' || props.font === undefined ? '' : ` text-${props.font}`
-    const color = props.color ? ` text-color-${props.color}` : ''
-    const darkMode = props.darkMode ? ' dark-mode' : ''
-    return `text${size}${font}${color}${darkMode}`
+/**
+ * @param TextProps Optional text properties:
+ * - `size` - 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'
+ * - `font` - 'body', 'accent', 'display'
+ * - `color` - 'primary', 'secondary', 'accent'
+ * - `darkMode` - `boolean`
+ */
+function Text<T extends object>(
+    { size, font, color, darkMode, ...props }: TextProps<T>
+  ) {
+    const sizeClass = size ? ` ${size}` : ''
+    const fontClass = font === 'body' || font === undefined ? '' : ` text-${font}`
+    const slotClass = props.slot === 'label' || props.slot === undefined ? '' : ` text-${props.slot}`
+    const colorClass = color ? ` text-color-${color}` : ''
+    const darkModeClass = darkMode ? ' dark-mode' : ''
+    
+    return (<AriaText className={`text${sizeClass}${fontClass}${slotClass}${colorClass}${darkModeClass}`}>
+        {props.children}
+    </AriaText>)
 }
 
 export default Text
