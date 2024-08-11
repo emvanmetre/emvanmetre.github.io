@@ -1,8 +1,9 @@
 @use './tokens.scss';
 
 .nav {
-    width: 1200px;
-    height: 50px;
+    min-width: 300px;
+    max-width: 100%;
+    height: tokens.$size-spacing-32;
     left: 0px;
     top: 0px;
     position: absolute;
@@ -11,7 +12,19 @@
     align-items: center;
     justify-content: space-between;
     position: relative;
-    height: var(--header-height);
-    margin: 1rem;
+    height: auto;
     padding: tokens.$size-spacing-4;
+    padding-left: tokens.$size-spacing-32;
+    padding-right: tokens.$size-spacing-32;
+}
+
+.nav-list {
+    min-width: 50%;
+    max-width: 1500px;
+    display: flex;
+    flex-direction: row-reverse;
+    position: relative;
+    min-height: tokens.$size-spacing-16;
+    padding: tokens.$size-spacing-4;
+    text-align: right;
 }

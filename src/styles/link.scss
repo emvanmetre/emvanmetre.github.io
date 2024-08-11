@@ -7,6 +7,10 @@
     flex-direction: row;
     text-decoration: none;
 
+    &.nav-link {
+        margin-right: 2rem;
+    }
+
     &:hover {
         color: tokens.$colors-purple-400;
     }

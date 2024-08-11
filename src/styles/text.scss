@@ -1,4 +1,5 @@
 @use './tokens.scss';
+@use './token-map.scss';
 
 .text {
     font-size: tokens.$size-text-18;
@@ -90,3 +91,9 @@
 .text-italic {
     font-style: italic;
 }
+
+@each $-color, $-token in token-map.$token-map {
+    .text-color#{$-color} {
+        color: $-token;
+    }
+  }

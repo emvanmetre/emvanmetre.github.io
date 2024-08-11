@@ -6,7 +6,7 @@ interface TextProps<T>
   extends Omit<AriaTextProps, 'children'> {
     size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     font?: 'body' | 'accent' | 'display'
-    color?: 'primary' | 'secondary' | 'accent'
+    color?: string
     darkMode?: boolean
   children?: React.ReactNode
 }
@@ -15,7 +15,7 @@ interface TextProps<T>
  * @param TextProps Optional text properties:
  * - `size` - 'xxs', 'xs', 'sm', 'md', 'lg', 'xl', 'xxl'
  * - `font` - 'body', 'accent', 'display'
- * - `color` - 'primary', 'secondary', 'accent'
+ * - `color` - any color token separated by hyphens (e.g. `colors-purple-100`)
  * - `darkMode` - `boolean`
  */
 function Text<T extends object>(
