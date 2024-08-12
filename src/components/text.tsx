@@ -40,7 +40,7 @@ function Text<T extends object>({
     const italicClass = italic ? ' text-italic' : ''
 
     return (
-        <ReactAriaText
+        <ReactAriaText slot={props.slot}
             className={`text${sizeClass}${fontClass}${weightClass}${italicClass}${slotClass}${colorClass}${darkModeClass}`}
         >
             {props.children}
