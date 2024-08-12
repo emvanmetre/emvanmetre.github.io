@@ -1,16 +1,13 @@
-import React from "react"
+import React from 'react'
 
 type NavListProps = {
+    size?: 'sm' | 'lg'
     children?: React.ReactNode
 }
 
 const NavList = (props: NavListProps) => {
-    return (
-    <div className="nav-list">
-        {props.children}
-    </div>
-    )
-    
+    const sizeClass = props.size === 'lg' || undefined ? '' : ' condensed'
+    return <div className={`nav-list${sizeClass}`}>{props.children}</div>
 }
 
 export default NavList

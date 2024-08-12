@@ -2,14 +2,10 @@
 @use './tokens.scss';
 @use './token-map.scss';
 
-
-
 $-icon-name-svg-map: (
-  '-logo': constants.$icon-logo,
-  '-menu': constants.$icon-menu,
+    '-logo': constants.$icon-logo,
+    '-menu': constants.$icon-menu,
 );
-
-
 
 .icon {
     width: 1rem;
@@ -26,16 +22,16 @@ $-icon-name-svg-map: (
     background-color: red;
 
     &.sm {
-      width: 1rem;
-      height: 1rem;
+        width: 1rem;
+        height: 1rem;
     }
     &.md {
-      width: 2rem;
-      height: 2rem;
+        width: 2rem;
+        height: 2rem;
     }
     &.lg {
-      width: 3rem;
-      height: 3rem;
+        width: 3rem;
+        height: 3rem;
     }
 }
 
@@ -43,10 +39,10 @@ $-icon-name-svg-map: (
     .icon#{$-name} {
         mask-image: $-svg;
     }
-  }
+}
 
 @each $-color, $-token in token-map.$token-map {
     .icon-color#{$-color} {
         background-color: $-token;
     }
-  }
+}

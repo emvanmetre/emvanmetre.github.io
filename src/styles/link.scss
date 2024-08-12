@@ -1,14 +1,19 @@
 @use './tokens.scss';
 
 .link {
-
     color: tokens.$colors-purple-600;
+    text-decoration: none;
     display: flex;
     flex-direction: row;
-    text-decoration: none;
+    flex-wrap: nowrap;
+    white-space: nowrap;
 
     &.nav-link {
         margin-right: 2rem;
+    }
+
+    &.nav-menu-link {
+        flex-direction: column;
     }
 
     &:hover {
@@ -18,5 +23,4 @@
     &:active {
         color: tokens.$colors-purple-500;
     }
-
 }

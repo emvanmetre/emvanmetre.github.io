@@ -7,8 +7,6 @@
     padding: 2px;
     min-width: 150px;
     box-sizing: border-box;
-    outline: none;
-
 }
 
 .menu-item {
@@ -20,9 +18,9 @@
     font-size: tokens.$size-text-16;
     position: relative;
     display: grid;
-    grid-template-areas: "label kbd"
-                        "desc  kbd";
+    grid-template-areas:
+        'label kbd'
+        'desc  kbd';
     align-items: center;
-    column-gap: 20px;
     forced-color-adjust: none;
 }

@@ -1,14 +1,13 @@
 const Sizes = {
     // Spacing
     spacing: {
-        'none': '0rem',
+        none: '0rem',
         '1': '0.0625rem',
         '2': '0.125rem',
         '4': '0.25rem',
         '8': '0.5rem',
         '16': '1rem',
         '32': '2rem',
-
     },
     // text
     text: {
@@ -22,6 +21,6 @@ const Sizes = {
         '56': '3.5rem',
         '70': '4.375rem',
         '88': '5.5rem',
-    }
+    },
 }
 export default Sizes

@@ -14,29 +14,37 @@ import '../style.css'
 type LinkProps = {
     darkMode?: boolean
     to: string
-    target? : '_self' | '_blank' | '_parent'
-    type?: 'standard' | 'nav'
+    target?: '_self' | '_blank' | '_parent'
+    type?: 'standard' | 'nav' | 'nav-menu'
     ariaLabel?: string
     children?: React.ReactNode
 }
 
 const Link = (props: LinkProps) => {
     const classNames = `link${props.darkMode ? ' link-dark' : ''}`
-    if ( props.type === 'nav') {
+    if (props.type === 'nav' || 'nav-menu') {
         return (
-            <NavLink to={props.to} className={`${classNames} nav-link`} target='_self' aria-label={props.ariaLabel}>
+            <NavLink
+                to={props.to}
+                className={`${classNames} ${props.type}-link`}
+                target="_self"
+                aria-label={props.ariaLabel}
+            >
                 {props.children}
             </NavLink>
         )
-    }
-    else {
+    } else {
         return (
-            <AriaLink href={props.to} className={classNames} target={props.target ?? '_self'} aria-label={props.ariaLabel}>
+            <AriaLink
+                href={props.to}
+                className={classNames}
+                target={props.target ?? '_self'}
+                aria-label={props.ariaLabel}
+            >
                 {props.children}
             </AriaLink>
         )
     }
-    
 }
 
 export default Link

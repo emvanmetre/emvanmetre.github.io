@@ -1,0 +1,12 @@
+@use './tokens.scss';
+
+.popover {
+    // padding: tokens.$size-spacing-16;
+    // border-radius: tokens.$size-spacing-8;
+    box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+}
+
+.popover-skin-light {
+    background-color: tokens.$colors-cream-100;
+    border-color: tokens.$colors-cream-400;
+}

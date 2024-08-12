@@ -7,7 +7,7 @@
     &.button-blank {
         background-color: transparent;
     }
-    &:not(.button-dark){
+    &:not(.button-dark) {
         &.button-primary {
             background-color: tokens.$colors-purple-600;
         }

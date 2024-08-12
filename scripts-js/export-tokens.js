@@ -31,7 +31,7 @@ try {
     const scssMapClass = `$token-map: (\n${cssVariables
         .replace(/:.*$/gm, '')
         .replace(/^(?=-).*$/gm, (line) => {
-            return '\'-' + line.replace(/--/, '') + '\': var(' + line + '),'
+            return "'-" + line.replace(/--/, '') + "': var(" + line + '),'
         })}\n)`
     saveTokens('src/styles', 'tokens', scssTokenClass, 'scss')
     saveTokens('src/styles', 'token-map', scssMapClass, 'scss')
