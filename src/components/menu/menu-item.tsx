@@ -1,9 +1,9 @@
 import React from 'react'
-import { MenuItem as AriaMenuItem } from 'react-aria-components'
-import type { MenuItemProps as AriaMenuItemProps } from 'react-aria-components'
+import { MenuItem as ReactAriaMenuItem } from 'react-aria-components'
+import type { MenuItemProps as ReactAriaMenuItemProps } from 'react-aria-components'
 import { Text } from '../'
 
-interface MenuItemProps extends Omit<AriaMenuItemProps, 'children'> {
+interface MenuItemProps extends Omit<ReactAriaMenuItemProps, 'children'> {
     darkMode?: boolean
     children?: React.ReactNode
 }
@@ -13,7 +13,7 @@ const MenuItem = (props: MenuItemProps) => {
         props.textValue ||
         (typeof props.children === 'string' ? props.children : undefined)
     return (
-        <AriaMenuItem
+        <ReactAriaMenuItem
             {...props}
             textValue={textValue}
             className={({ isFocused, isOpen }) =>
@@ -30,7 +30,7 @@ const MenuItem = (props: MenuItemProps) => {
                     )}
                 </>
             )}
-        </AriaMenuItem>
+        </ReactAriaMenuItem>
     )
 }
 

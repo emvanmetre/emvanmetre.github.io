@@ -1,7 +1,7 @@
-import { Text as AriaText } from 'react-aria-components'
-import type { TextProps as AriaTextProps } from 'react-aria-components'
+import { Text as ReactAriaText } from 'react-aria-components'
+import type { TextProps as ReactAriaTextProps } from 'react-aria-components'
 
-interface TextProps<T> extends Omit<AriaTextProps, 'children'> {
+interface TextProps<T> extends Omit<ReactAriaTextProps, 'children'> {
     size?: 'xxs' | 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl'
     font?: 'body' | 'accent' | 'display'
     color?: string
@@ -40,11 +40,11 @@ function Text<T extends object>({
     const italicClass = italic ? ' text-italic' : ''
 
     return (
-        <AriaText
+        <ReactAriaText
             className={`text${sizeClass}${fontClass}${weightClass}${italicClass}${slotClass}${colorClass}${darkModeClass}`}
         >
             {props.children}
-        </AriaText>
+        </ReactAriaText>
     )
 }
 

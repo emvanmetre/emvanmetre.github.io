@@ -1,12 +1,12 @@
 import {
-    Popover as AriaPopover,
+    Popover as ReactAriaPopover,
     OverlayArrow,
     Dialog,
 } from 'react-aria-components'
-import type { PopoverProps as AriaPopoverProps } from 'react-aria-components'
+import type { PopoverProps as ReactAriaPopoverProps } from 'react-aria-components'
 import '../style.css'
 
-interface PopoverProps extends Omit<AriaPopoverProps, 'children'> {
+interface PopoverProps extends Omit<ReactAriaPopoverProps, 'children'> {
     skin?: 'light'
     children: React.ReactNode
     darkMode?: boolean
@@ -16,17 +16,17 @@ function Popover({ children, ...props }: PopoverProps) {
     const skinClass = props.skin ? ` popover-skin-${props.skin}` : ''
 
     return (
-        <AriaPopover
+        <ReactAriaPopover
             {...props}
             className={`popover${skinClass}${props.darkMode ? ' popover-dark' : ''}`}
         >
             <OverlayArrow>
-                <svg width={12} height={12} viewBox="0 0 12 12">
-                    <path d="M0 0 L6 6 L12 0" />
+                <svg className="popover-arrow" width={16} height={16} viewBox="0 0 32 32">
+                  <path d="M0 0 L16 16 L32 0" />
                 </svg>
             </OverlayArrow>
             <Dialog>{children}</Dialog>
-        </AriaPopover>
+        </ReactAriaPopover>
     )
 }
 

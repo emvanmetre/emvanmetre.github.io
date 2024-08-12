@@ -1,6 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { Link as AriaLink } from 'react-aria-components'
+import { Link as ReactAriaLink } from 'react-aria-components'
 import { Text } from './index'
 import '../style.css'
 
@@ -35,14 +35,14 @@ const Link = (props: LinkProps) => {
         )
     } else {
         return (
-            <AriaLink
+            <ReactAriaLink
                 href={props.to}
                 className={classNames}
                 target={props.target ?? '_self'}
                 aria-label={props.ariaLabel}
             >
                 {props.children}
-            </AriaLink>
+            </ReactAriaLink>
         )
     }
 }
