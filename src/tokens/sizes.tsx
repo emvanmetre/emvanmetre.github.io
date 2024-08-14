@@ -22,5 +22,10 @@ const Sizes = {
         '70': '4.375rem',
         '88': '5.5rem',
     },
+    sem: {
+        'content-padding': '3rem',
+        'content-margin': '',
+        'navbar-height': '3rem',
+    },
 }
 export default Sizes

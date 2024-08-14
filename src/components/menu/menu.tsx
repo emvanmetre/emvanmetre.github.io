@@ -26,19 +26,16 @@ function Menu<T extends object>({
     const buttonColor = props.buttonColor
         ? `button-${props.buttonColor}`
         : 'button-primary'
-      const iconColor = props.iconColor
-        ? `icon-color-${props.iconColor}`
-        : ''
     return (
         <MenuTrigger {...props}>
             <Button
                 className={`button ${buttonColor}${props.darkMode ? ' button-dark' : ''}`}
             >
-                <Icon svg={icon} color={iconColor}></Icon>
+                <Icon svg={icon} color={props.iconColor}></Icon>
                 {label}
             </Button>
             <Popover skin="light" placement='bottom'>
-                <ReactAriaMenu {...props}>{children}</ReactAriaMenu>
+                <ReactAriaMenu autoFocus {...props}>{children}</ReactAriaMenu>
             </Popover>
         </MenuTrigger>
     )

@@ -14,6 +14,16 @@
 
     &.nav-menu-link {
         flex-direction: column;
+
+        &:hover {
+            color: tokens.$colors-purple-400;
+            background: tokens.$colors-purple-100;
+        }
+    
+        &:active {
+            color: tokens.$colors-purple-500;
+            background: tokens.$colors-purple-0;
+        }
     }
 
     &:hover {

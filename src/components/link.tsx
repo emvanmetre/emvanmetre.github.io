@@ -22,7 +22,7 @@ type LinkProps = {
 
 const Link = (props: LinkProps) => {
     const classNames = `link${props.darkMode ? ' link-dark' : ''}`
-    if (props.type === 'nav' || 'nav-menu') {
+    if (props.type === 'nav' || props.type === 'nav-menu') {
         return (
             <NavLink
                 to={props.to}

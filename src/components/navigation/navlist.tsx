@@ -6,7 +6,7 @@ type NavListProps = {
 }
 
 const NavList = (props: NavListProps) => {
-    const sizeClass = props.size === 'lg' || undefined ? '' : ' condensed'
+    const sizeClass = props.size === 'lg' || props.size === undefined ? '' : ' condensed'
     return <div className={`nav-list${sizeClass}`}>{props.children}</div>
 }
 
