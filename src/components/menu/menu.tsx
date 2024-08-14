@@ -13,6 +13,7 @@ interface MenuProps<T>
     icon?: string
     buttonColor?: 'primary' | 'secondary' | 'tertiary' | 'blank'
     iconColor?: string
+    iconSize?: 'sm' | 'md' | 'lg'
     darkMode?: boolean
     children?: React.ReactNode
 }
@@ -31,7 +32,7 @@ function Menu<T extends object>({
             <Button
                 className={`button ${buttonColor}${props.darkMode ? ' button-dark' : ''}`}
             >
-                <Icon svg={icon} color={props.iconColor}></Icon>
+                <Icon svg={icon} size={props.iconSize} color={props.iconColor}></Icon>
                 {label}
             </Button>
             <Popover skin="light" placement='bottom'>

@@ -43,6 +43,11 @@
   --size-spacing-16: 1rem;
   --size-spacing-32: 2rem;
   --size-spacing-none: 0rem;
+  --size-radius-none: 0rem;
+  --size-radius-4px: 0.25rem;
+  --size-radius-8px: 0.5rem;
+  --size-radius-16px: 1rem;
+  --size-radius-32px: 2rem;
   --size-text-12: 0.75rem;
   --size-text-16: 1rem;
   --size-text-18: 1.125rem;

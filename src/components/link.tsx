@@ -16,6 +16,7 @@ type LinkProps = {
     to: string
     target?: '_self' | '_blank' | '_parent'
     type?: 'standard' | 'nav' | 'nav-menu'
+    selected?: boolean
     ariaLabel?: string
     children?: React.ReactNode
 }
@@ -26,7 +27,7 @@ const Link = (props: LinkProps) => {
         return (
             <NavLink
                 to={props.to}
-                className={`${classNames} ${props.type}-link`}
+                className={`${classNames} ${props.type}-link${props.selected ? ' selected' : ''}`}
                 target="_self"
                 aria-label={props.ariaLabel}
             >

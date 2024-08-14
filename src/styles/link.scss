@@ -14,6 +14,14 @@
 
     &.nav-menu-link {
         flex-direction: column;
+        margin-right: 0px;
+        padding: tokens.$size-spacing-2 tokens.$size-spacing-4;
+        border-radius: tokens.$size-radius-4px;
+
+        &.selected {
+            color: tokens.$colors-purple-500;
+            background: tokens.$colors-purple-200;
+        }
 
         &:hover {
             color: tokens.$colors-purple-400;
@@ -22,7 +30,7 @@
     
         &:active {
             color: tokens.$colors-purple-500;
-            background: tokens.$colors-purple-0;
+            background: tokens.$colors-purple-200;
         }
     }
 

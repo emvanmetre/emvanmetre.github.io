@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useMediaQuery } from 'react-responsive'
 import { Link, Icon, Menu, MenuItem, NavList, Text } from '../index'
 import '../../styles/navbar.scss'
+import { useLocation } from "react-router-dom";
 
 type NavbarProps = {
     startInvisible?: boolean
@@ -9,8 +10,15 @@ type NavbarProps = {
 }
 
 const Navbar = (props: NavbarProps) => {
+    const location = useLocation()
     const [isSticky, setIsSticky] = useState(false);
     const [isInvis, setIsInvis] = useState(false);
+    const [currPath, setCurrPath] = useState(location.pathname)
+
+    useEffect(() => {
+        setCurrPath(location.pathname)
+    }, [location, setCurrPath])
+
     const makeSticky = () => {
         if (window.scrollY >= 20) {
             if (!isSticky) {
@@ -26,6 +34,7 @@ const Navbar = (props: NavbarProps) => {
         }
     }
     window.addEventListener("scroll", makeSticky)
+
     const startInvis = props.startInvisible ? ' nav-home' : ''
     const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
     const navColor = props.darkMode ? 'nav-dark-mode' : 'nav-light-mode'
@@ -34,19 +43,23 @@ const Navbar = (props: NavbarProps) => {
         return (
             <nav className={navClasses}>
                 <NavList size="sm">
-                    <Menu icon="menu" iconColor="colors-purple-600" buttonColor="blank">
+                    <Menu icon="menu" iconSize="lg" iconColor="colors-purple-600" buttonColor="blank">
                         <MenuItem isDisabled textValue='About'>
-                            <Text slot="label">
-                                    About
+                            <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
+                                <Text slot="label">
+                                   About
                                 </Text>
+                            </Link>
                         </MenuItem>
-                        <MenuItem isDisabled textValue='About 2'>
-                            <Text slot="label">
+                        <MenuItem isDisabled textValue='Experience'>
+                        <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
+                                <Text slot="label">
                                     Experience
                                 </Text>
+                            </Link>
                         </MenuItem>
                         <MenuItem isDisabled textValue='About 3'>
-                             <Link to="/about" type="nav-menu">
+                             <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
                                 <Text slot="label">
                                     Link 3
                                 </Text>
@@ -55,7 +68,7 @@ const Navbar = (props: NavbarProps) => {
                     </Menu>
                 </NavList>
                 <Link to="/" type="nav">
-                    <Icon svg="logo" size="md" color={`${props.darkMode ? 'colors-purple-600' : 'colors-purple-600'}`} />
+                    <Icon svg="logo" size="lg" color={`${props.darkMode ? 'colors-purple-600' : 'colors-purple-600'}`} />
                     <Text font="display" size="xs">
                         Elizabeth Van Metre
                     </Text>
@@ -67,7 +80,7 @@ const Navbar = (props: NavbarProps) => {
         return (
             <nav className={navClasses}>
                 <Link to="/" type="nav">
-                    <Icon svg="logo" color="colors-purple-600" size="md" />
+                    <Icon svg="logo" color="colors-purple-600" size="lg" />
                     <Text font="display" size="xs">
                         Elizabeth Van Metre
                     </Text>
@@ -80,7 +93,7 @@ const Navbar = (props: NavbarProps) => {
                     </Link>
                     <Link to="/about" type="nav">
                         <Text font="body" size="md" weight="bold">
-                            Link 2
+                            Experience
                         </Text>
                     </Link>
                 </NavList>
