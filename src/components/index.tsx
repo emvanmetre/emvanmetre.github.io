@@ -1,9 +1,11 @@
 import { Navbar, NavList } from './navigation/'
-import {Button} from './buttons'
+import { Button } from './buttons'
 import Link from './link'
 import Text from './text'
 import Icon from './icon'
 import Popover from './popover'
 import { Menu, MenuItem } from './menu'
+import { RetroWindow } from './svgs'
+import Card from './card'
 
-export { Button, Icon, Link, Menu, MenuItem, Navbar, NavList, Popover, Text }
+export { Button, Card, Icon, Link, Menu, MenuItem, Navbar, NavList, Popover, RetroWindow, Text }
