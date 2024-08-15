@@ -1,26 +1,38 @@
 @use './tokens.scss';
 
 :focus-visible {
-    outline: tokens.$size-spacing-2 solid tokens.$colors-blue-500;
-    outline-offset: tokens.$size-spacing-2;
+  outline: tokens.$size-spacing-2 solid tokens.$colors-blue-500;
+  outline-offset: tokens.$size-spacing-2;
 }
 
 .webpage {
-    background: tokens.$colors-cream-300;
+  background: tokens.$colors-cream-300;
 }
 
 .content {
-    padding: tokens.$size-text-36;
+  padding: tokens.$size-text-36;
 }
 
 .content-bounded {
-    background: tokens.$colors-cream-100;
-    margin: tokens.$size-text-36 auto;
-    min-width: 200px;
-    max-width: 1000px;
-    padding: tokens.$size-text-36;
+  background: tokens.$colors-cream-100;
+  margin: tokens.$size-text-36 auto;
+  min-width: 200px;
+  max-width: 1000px;
+  padding: tokens.$size-text-36;
 }
 
 .header-box {
+  width: 100%;
+  height: 590px;
+  display: grid;
+  overflow: hidden;
 
+  &.sm {
+    height: 488px;
+  }
+}
+
+.header-box > * {
+  grid-row: 1;
+  grid-column: 1;
 }

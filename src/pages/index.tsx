@@ -1,12 +1,16 @@
 import React from 'react'
-import { Card, RetroWindow } from '../components/'
+import { Card, InnovateSVG, RetroGridSVG, RetroWindowSVG } from '../components/'
+import { useMediaQuery } from 'react-responsive'
 
 const Home = () => {
   document.body.classList.add('webpage')
+  const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
   return (
     <>
-      <div className="header-box">
-        <RetroWindow classNames={'retro-window'} />
+      <div className={isScreenSmall ? "header-box sm" : "header-box"}>
+        <RetroWindowSVG classNames={isScreenSmall ? "retro-window-sm" : "retro-window"} />
+        <RetroGridSVG classNames={isScreenSmall ?'retro-grid-sm' : 'retro-grid'} />
+        <InnovateSVG classNames={'innovate-logo'} small={isScreenSmall} />
       </div>
       <div className="content">
         <div className="content-bounded">

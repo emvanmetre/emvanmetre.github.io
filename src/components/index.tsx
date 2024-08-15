@@ -5,7 +5,7 @@ import Text from './text'
 import Icon from './icon'
 import Popover from './popover'
 import { Menu, MenuItem } from './menu'
-import { RetroWindow } from './svgs'
+import { InnovateSVG, RetroGridSVG, RetroWindowSVG } from './svgs'
 import Card from './card'
 
-export { Button, Card, Icon, Link, Menu, MenuItem, Navbar, NavList, Popover, RetroWindow, Text }
+export { Button, Card, Icon, InnovateSVG, Link, Menu, MenuItem, Navbar, NavList, Popover, RetroGridSVG, RetroWindowSVG, Text }
