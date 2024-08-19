@@ -31,7 +31,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 
 ### `npm run deploy`
 
-Builds the app with `npm run build` then deploys the resulting build folder to [emvanmetre.github.io]!
+Builds the app with `npm run build` then deploys the resulting build folder to [emvanmetre.github.io](emvanmetre.github.io)!
 
 ## Learn More
 
