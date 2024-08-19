@@ -41,7 +41,7 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 ### `npm run deploy`
 
-Builds the app with `npm run build` then deploys the resulting build folder to [emvanmetre.github.io]!
+Builds the app with `npm run build` then deploys the resulting build folder to [emvanmetre.github.io](emvanmetre.github.io)!
 
 ## Learn More
 
