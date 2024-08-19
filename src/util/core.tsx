@@ -1,1 +1,3 @@
-export {}
+const CoreProps = {}
+
+export { CoreProps }

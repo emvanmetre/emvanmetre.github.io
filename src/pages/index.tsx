@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, InnovateSVG, RetroGridSVG, RetroWindowSVG } from '../components/'
+import { Text, InnovateSVG, RetroGridSVG, RetroWindowSVG } from '../components/'
 import { useMediaQuery } from 'react-responsive'
 
 const Home = () => {
@@ -14,36 +14,7 @@ const Home = () => {
       </div>
       <div className="content">
         <div className="content-bounded">
-          <h1>Welcome to GeeksforGeeks</h1>
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
-          <h1>Welcome to GeeksforGeeks</h1>
-
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
-          <h1>Welcome to GeeksforGeeks</h1>
-
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
-          <h1>Welcome to GeeksforGeeks</h1>
-
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
-          <h1>Welcome to GeeksforGeeks</h1>
-
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
-          <Card size="standard" ariaLabel="pretend button">
-            Hello
-          </Card>
+          <Text size='lg' font='display'>Hmmm, this site is still a WIP...</Text>
         </div>
       </div>
     </>
