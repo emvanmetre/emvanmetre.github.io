@@ -88,3 +88,69 @@ export const stylePropertyPrefixes: Partial<Record<StylePropsKeys, string>> = {
   //   standardMode: 'standard-mode',
   //   darkMode: 'dark-mode',
 }
+
+/**
+ * An object requiring every single key in StyleProps
+ *
+ * This allows us to use `Object.keys` to get a type-safe array of all of the core style props
+ */
+const allStyleProps: Required<Record<StylePropsKeys, false>> = {
+    margin: false,
+    m: false,
+    marginTop: false,
+    mt: false,
+    marginRight: false,
+    mr: false,
+    marginBottom: false,
+    mb: false,
+    marginLeft: false,
+    ml: false,
+    marginX: false,
+    mx: false,
+    marginY: false,
+    my: false,
+    padding: false,
+    p: false,
+    paddingTop: false,
+    pt: false,
+    paddingRight: false,
+    pr: false,
+    paddingBottom: false,
+    pb: false,
+    paddingLeft: false,
+    pl: false,
+    paddingX: false,
+    px: false,
+    paddingY: false,
+    py: false,
+    backgroundColor: false,
+    bgc: false,
+    // textAlign: false,
+    // textAllCaps: false,
+    // textColor: false,
+    // fontWeight: false,
+    // fontSize: false,
+    // fontFamily: false,
+    // fontSkin: false,
+    // display: false,
+    // standardMode: false,
+    // darkMode: false,
+    // // compactMode: false,
+    // overflow: false,
+    // visuallyHidden: false,
+    // loadingShimmer: false,
+  }
+  
+
+export const styleValidProperties = new Set(Object.keys(allStyleProps) as StylePropsKeys[])
+
+export function isValidStyleProperty(key: string): key is StylePropsKeys {
+    return styleValidProperties.has(key as StylePropsKeys)
+}
+
+export function getKey(key: string): string | null {
+  if (isValidStyleProperty(key)) {
+    return stylePropertyPrefixes[key] || key
+  }
+  return null
+}
