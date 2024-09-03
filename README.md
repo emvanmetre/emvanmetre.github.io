@@ -1,4 +1,4 @@
-# [emvanmetre.github.io](emvanmetre.github.io)](https://emvanmetre.github.io/)
+# [emvanmetre.github.io](https://emvanmetre.github.io/)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
