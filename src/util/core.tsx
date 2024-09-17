@@ -4,6 +4,7 @@ export type Responsive<T> = T | Partial<Record<StyleBreakpoints, T>>
 
 export type CoreProps = {
     margin
+    padding
 }
 
 
