@@ -59,9 +59,9 @@ const Navbar = (props: NavbarProps) => {
                             </Link>
                         </MenuItem>
                         <MenuItem isDisabled textValue='About 3'>
-                             <Link to="/about" type="nav-menu" selected={currPath === '/about'}>
+                             <Link to="/project" type="nav-menu" selected={currPath === '/project'}>
                                 <Text slot="label">
-                                    Link 3
+                                    GHH 2024
                                 </Text>
                             </Link>
                         </MenuItem>
@@ -86,6 +86,11 @@ const Navbar = (props: NavbarProps) => {
                     </Text>
                 </Link>
                 <NavList>
+                    <Link to="/project" type="nav">
+                        <Text font="body" size="md" weight="bold">
+                            GHH 2024
+                        </Text>
+                    </Link>
                     <Link to="/about" type="nav">
                         <Text font="body" size="md" weight="bold">
                             About
