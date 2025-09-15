@@ -6,6 +6,8 @@
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
+  "prettier.configPath": ".prettierrc.js",
+  "prettier.prettierPath": "./node_modules/prettier",
   "javascript.preferences.importModuleSpecifier": "shortest",
   "javascript.updateImportsOnFileMove.enabled": "always",
   "typescript.preferences.importModuleSpecifier": "non-relative",
