@@ -1,4 +1,4 @@
 import Home from './home'
-import GHH from './ghh'
+import Swordle from './swordle'
 
-export { Home, GHH }
+export { Home, Swordle }
