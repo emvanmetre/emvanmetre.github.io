@@ -1,5 +1,7 @@
 // Space & Display Types
 
+import { StyleProps } from './styles'
+
 export type StyleBreakpoints = 'xs' | 'sm' | 'md' | 'lg' | 'xl'
 
 export const SpacePropType = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, '0', '1', '2', '3', '4', '5']
@@ -57,3 +59,8 @@ export type StyleFontSkin =
   | 'body-small-bold'
   | 'footnote'
   | 'footnote-bold'
+
+export type CoreStyleProps = {
+  swanStyle?: StyleProps & Partial<Record<StyleBreakpoints, StyleProps>>
+  className?: string
+} & StyleProps
