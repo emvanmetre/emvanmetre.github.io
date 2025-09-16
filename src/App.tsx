@@ -1,6 +1,6 @@
 import React from 'react'
 import { Navbar } from './components'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Home, Swordle } from './pages'
 // import About from "./pages/about";
 // import Blogs from "./pages/blogs";
