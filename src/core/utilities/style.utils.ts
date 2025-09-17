@@ -5,16 +5,16 @@ import { iterToSet } from './transform.utils'
 
 export function processStyleProps(props: CoreStyleProps, defaultClassNameSet?: Iterable<string> | null): Set<string> {
   let classNameSet = iterToSet(defaultClassNameSet)
-  if (props.swanStyle) {
-    const swanStyle = props.swanStyle
+  if (props.style) {
+    const style = props.style
     responsiveModifierSet.forEach(modifier => {
-      const modifierValue = swanStyle[modifier]
+      const modifierValue = style[modifier]
       if (modifierValue) {
         classNameSet = processResponsiveStyleProps(modifierValue, modifier, classNameSet)
       }
     })
-    // This only process top level ResponsiveProps, inside Swan Style
-    classNameSet = processResponsiveStyleProps(props.swanStyle, 'xs', classNameSet)
+    // This only process top level ResponsiveProps, inside Style
+    classNameSet = processResponsiveStyleProps(props.style, 'xs', classNameSet)
   }
   // This only process top level ResponsiveProps
   processResponsiveStyleProps(props, 'xs', classNameSet)

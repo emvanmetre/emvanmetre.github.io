@@ -15,8 +15,8 @@ type Props = {
 export type SwordleInternalProps = Omit<CoreProps<JSX.IntrinsicElements['div'], HTMLDivElement, Props>, 'children'>
 
 const SwordleInternal = renderWithRef<MinNativeRef, SwordleInternalProps>('Swordle', (props, ref) => {
-  const { words, loading, error } = props
-  const { currentWord, currentGuess, handleKeyup } = useSwordle()
+  const { words, loading, error, ...rest } = props
+  const { currentWord, currentGuess, wordLength, maxTurns, turn, handleKeyup } = useSwordle()
 
   useEffect(() => {
     window.addEventListener('keyup', handleKeyup)
@@ -25,9 +25,12 @@ const SwordleInternal = renderWithRef<MinNativeRef, SwordleInternalProps>('Sword
   }, [handleKeyup])
 
   return (
-    <RenderComp root="div" forwardedRef={ref} props={{ ...props }}>
+    <RenderComp root="div" forwardedRef={ref} props={{ ...rest }}>
       <p>current word: {currentWord}</p>
       <p>CURRENT GUESS: {currentGuess}</p>
+      <p>
+        WORD LENGTH: {wordLength} MAX TURNS: {maxTurns} CURRENT TURN: {turn}
+      </p>
       {loading && <div>Loading...</div>}
       {error && <div>Error: {error}</div>}
       {!loading && !error && (

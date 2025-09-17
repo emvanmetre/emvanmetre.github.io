@@ -17,8 +17,8 @@ const Swordle = renderWithRef<MinNativeRef, SwordleProps>('Swordle', (props, ref
   return (
     <SwordleContextProvider wordList={words}>
       <RenderComp root="div" forwardedRef={ref} props={{ ...rest }}>
-        <SwordleInternal words={words} {...internalProps} />
         {children}
+        <SwordleInternal words={words} {...internalProps} />
       </RenderComp>
     </SwordleContextProvider>
   )

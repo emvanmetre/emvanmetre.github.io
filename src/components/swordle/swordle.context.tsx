@@ -9,9 +9,10 @@ export type SwordleContextValue = {
   turn: number
   currentGuess: string
   guesses: string[]
+  formattedGuesses: { key: string; color: 'green' | 'yellow' | 'gray' }[][]
   isCorrect: boolean
   addNewGuess: () => void
-  formatGuess: (isCorrect: boolean) => { key: string; color: string }[]
+  formatGuess: (isCorrect: boolean) => { key: string; color: 'green' | 'yellow' | 'gray' }[]
   handleKeyup: (event: KeyboardEvent) => boolean
   playAgain: () => void
 }
@@ -36,6 +37,7 @@ export const SwordleContextProvider = (props: SwordleContextProps) => {
   const [turn, setTurn] = useState(0)
   const [currentGuess, setCurrentGuess] = useState('')
   const [guesses, setGuesses] = useState<string[]>([])
+  const [formattedGuesses, setFormattedGuesses] = useState<{ key: string; color: 'green' | 'yellow' | 'gray' }[][]>([])
   const [isCorrect, setIsCorrect] = useState(false)
   // const [usedKeys, setUsedKeys] = useState<{ [key: string]: string }>({})
 
@@ -98,6 +100,7 @@ export const SwordleContextProvider = (props: SwordleContextProps) => {
     // validate guess
     const isCorrect = currentGuess === currentWord.replace(/ /g, '')
     const formattedGuess = formatGuess(isCorrect)
+    setFormattedGuesses([...formattedGuesses, formattedGuess])
     console.log({ formattedGuess })
     // clear guess if incorrect
     if (isCorrect) {
@@ -140,7 +143,7 @@ export const SwordleContextProvider = (props: SwordleContextProps) => {
     setIsCorrect(false)
   }
 
-  const swordleValue = { currentWord, wordLength, maxTurns, currentGuess, turn, guesses, isCorrect, formatGuess, addNewGuess, handleKeyup, playAgain }
+  const swordleValue = { currentWord, wordLength, maxTurns, currentGuess, turn, guesses, formattedGuesses, isCorrect, formatGuess, addNewGuess, handleKeyup, playAgain }
 
   return <SwordleContext.Provider value={swordleValue}>{children}</SwordleContext.Provider>
 }

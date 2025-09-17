@@ -1,6 +1,7 @@
 import React from 'react'
 import { Text, Swordle } from '../components/'
 import { useMediaQuery } from 'react-responsive'
+import { SwordleGuesses } from '../components/swordle'
 
 const SwordlePage = () => {
   document.body.classList.add('webpage')
@@ -10,7 +11,9 @@ const SwordlePage = () => {
       <div className={isScreenSmall ? 'header-box sm' : 'header-box'}></div>
       <div className="content">
         <div className="content-bounded">
-          <Swordle />
+          <Swordle>
+            <SwordleGuesses></SwordleGuesses>
+          </Swordle>
           <Text size="lg" font="display">
             ...are you Ready for It?
           </Text>

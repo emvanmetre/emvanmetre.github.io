@@ -1,0 +1,9 @@
+.swordle-tile {
+  width: 20px;
+  height: 30px;
+  background-color: lightgray;
+
+  &.swordle-tile-space {
+    background-color: transparent;
+  }
+}

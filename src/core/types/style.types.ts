@@ -61,6 +61,6 @@ export type StyleFontSkin =
   | 'footnote-bold'
 
 export type CoreStyleProps = {
-  swanStyle?: StyleProps & Partial<Record<StyleBreakpoints, StyleProps>>
+  style?: StyleProps & Partial<Record<StyleBreakpoints, StyleProps>>
   className?: string
 } & StyleProps
