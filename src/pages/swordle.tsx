@@ -1,8 +1,8 @@
 import React from 'react'
-import { Text } from '../components/'
+import { Text, Swordle } from '../components/'
 import { useMediaQuery } from 'react-responsive'
 
-const Swordle = () => {
+const SwordlePage = () => {
   document.body.classList.add('webpage')
   const isScreenSmall = useMediaQuery({ maxWidth: '1150px' })
   return (
@@ -10,6 +10,7 @@ const Swordle = () => {
       <div className={isScreenSmall ? 'header-box sm' : 'header-box'}></div>
       <div className="content">
         <div className="content-bounded">
+          <Swordle />
           <Text size="lg" font="display">
             ...are you Ready for It?
           </Text>
@@ -19,4 +20,4 @@ const Swordle = () => {
   )
 }
 
-export default Swordle
+export default SwordlePage

@@ -7,5 +7,6 @@ import Popover from './popover'
 import { Menu, MenuItem } from './menu'
 import { InnovateSVG, RetroGridSVG, RetroWindowSVG } from './svgs'
 import Card from './card'
+import { Swordle } from './swordle'
 
-export { Button, Card, Icon, InnovateSVG, Link, Menu, MenuItem, Navbar, NavList, Popover, RetroGridSVG, RetroWindowSVG, Text }
+export { Button, Card, Icon, InnovateSVG, Link, Menu, MenuItem, Navbar, NavList, Popover, RetroGridSVG, RetroWindowSVG, Text, Swordle }
