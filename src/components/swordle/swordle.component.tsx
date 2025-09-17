@@ -1,9 +1,8 @@
-import { useMemo } from 'react'
 import { MinNativeRef } from '../../core/types/core.types'
 import { CoreProps } from '../../core/types/utility'
 import { RenderComp } from '../core/render-comp.component'
 import { renderWithRef } from '../core/render-with-ref'
-import { SwordleContextProvider, SwordleContextValue } from './swordle.context'
+import { SwordleContextProvider, useSwordleData } from './swordle.context'
 import SwordleInternal from './swordle-internal.component'
 
 type Props = {}
@@ -13,11 +12,12 @@ export type SwordleProps = CoreProps<JSX.IntrinsicElements['div'], HTMLDivElemen
 const Swordle = renderWithRef<MinNativeRef, SwordleProps>('Swordle', (props, ref) => {
   const { children, ...rest } = props
 
-  const contextValue = useMemo<SwordleContextValue>(() => ({ currentWord: '' }), [])
+  const { words, ...internalProps } = useSwordleData()
+
   return (
-    <SwordleContextProvider value={contextValue}>
+    <SwordleContextProvider wordList={words}>
       <RenderComp root="div" forwardedRef={ref} props={{ ...rest }}>
-        <SwordleInternal />
+        <SwordleInternal words={words} {...internalProps} />
         {children}
       </RenderComp>
     </SwordleContextProvider>
