@@ -32,7 +32,7 @@ const SwordleGuesses = renderWithRef<HTMLDivElement, SwordleGuessesProps>('Sword
                   return (
                     <>
                       <Column key={`space-${j}`} className={`swordle-letter`}>
-                        <SwordleTile space>{''}</SwordleTile>
+                        <SwordleTile color="space">{''}</SwordleTile>
                       </Column>
                       <Column key={`letter-${j}`} className={`swordle-letter`}>
                         <SwordleTile color={letter.color}>{letter.key}</SwordleTile>
@@ -49,29 +49,56 @@ const SwordleGuesses = renderWithRef<HTMLDivElement, SwordleGuessesProps>('Sword
             </Row>
           )
         })}
-        {[...Array(maxTurns - turn)].map((_, i) => (
-          <Row key={`row-${i + turn}`} className="swordle-guess-row">
-            {[...Array(wordLength)].map((_, j) => {
-              if (spaceIndexes.includes(j)) {
+        {
+          // current guess, if there are remaining turns
+          turn < maxTurns && (
+            <Row key={`row-${turn}`} className="swordle-guess-row">
+              {[...Array(wordLength)].map((_, j) => {
+                if (spaceIndexes.includes(j)) {
+                  return (
+                    <>
+                      <Column key={`space-${j}`} className={`swordle-letter`}>
+                        <SwordleTile color="space">{''}</SwordleTile>
+                      </Column>
+                      <Column key={`letter-${j}`} className={`swordle-letter`}>
+                        <SwordleTile color="empty">{currentGuess[j] || ''}</SwordleTile>
+                      </Column>
+                    </>
+                  )
+                }
                 return (
-                  <>
-                    <Column key={`space-${j}`} className={`swordle-letter`}>
-                      <SwordleTile space>{''}</SwordleTile>
-                    </Column>
-                    <Column key={`letter-${j}`} className={`swordle-letter`}>
-                      <SwordleTile>{''}</SwordleTile>
-                    </Column>
-                  </>
+                  <Column key={`letter-${j}`} className={`swordle-letter`}>
+                    <SwordleTile color="empty">{currentGuess[j] || ''}</SwordleTile>
+                  </Column>
                 )
-              }
-              return (
-                <Column key={`letter-${j}`} className={`swordle-letter`}>
-                  <SwordleTile>{''}</SwordleTile>
-                </Column>
-              )
-            })}
-          </Row>
-        ))}
+              })}
+            </Row>
+          )
+        }
+        {turn < maxTurns - 1 &&
+          [...Array(maxTurns - turn - 1)].map((_, i) => (
+            <Row key={`row-${i + turn}`} className="swordle-guess-row">
+              {[...Array(wordLength)].map((_, j) => {
+                if (spaceIndexes.includes(j)) {
+                  return (
+                    <>
+                      <Column key={`space-${j}`} className={`swordle-letter`}>
+                        <SwordleTile color="space">{''}</SwordleTile>
+                      </Column>
+                      <Column key={`letter-${j}`} className={`swordle-letter`}>
+                        <SwordleTile color="empty">{''}</SwordleTile>
+                      </Column>
+                    </>
+                  )
+                }
+                return (
+                  <Column key={`letter-${j}`} className={`swordle-letter`}>
+                    <SwordleTile color="empty">{''}</SwordleTile>
+                  </Column>
+                )
+              })}
+            </Row>
+          ))}
       </GridContainer>
     </RenderComp>
   )

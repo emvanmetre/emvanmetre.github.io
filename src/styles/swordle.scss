@@ -1,9 +1,37 @@
+@use './tokens.scss';
+
 .swordle-tile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
   height: 30px;
-  background-color: lightgray;
+  background-color: rgb(228, 105, 105);
+  border: 1px solid gray;
 
   &.swordle-tile-space {
     background-color: transparent;
+    border: none;
   }
+
+  &.swordle-tile-green {
+    background-color: green;
+    border-color: darkgreen;
+  }
+  &.swordle-tile-yellow {
+    background-color: yellow;
+    border-color: darkgoldenrod;
+  }
+  &.swordle-tile-gray {
+    background-color: gray;
+    border-color: rgb(83, 83, 83);
+  }
+}
+
+.swordle-guesses {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: tokens.$size-sem-content-margin;
 }
