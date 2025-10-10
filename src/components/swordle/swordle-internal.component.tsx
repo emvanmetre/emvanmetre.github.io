@@ -3,8 +3,7 @@ import { MinNativeRef } from '../../core/types/core.types'
 import { CoreProps } from '../../core/types/utility'
 import { RenderComp } from '../core/render-comp.component'
 import { renderWithRef } from '../core/render-with-ref'
-import { useSwordle, useSwordleData } from './swordle.context'
-import { error } from 'console'
+import { useSwordle } from './swordle.context'
 
 type Props = {
   words: string[] // TODO: remove this prop and get words from context instead

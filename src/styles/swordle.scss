@@ -4,27 +4,35 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 20px;
-  height: 30px;
-  background-color: rgb(228, 105, 105);
-  border: 1px solid gray;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  border: 2px solid tokens.$colors-gray-400;
+
+  &:has(span:not(:empty)) {
+    border-color: tokens.$colors-gray-600;
+  }
 
   &.swordle-tile-space {
     background-color: transparent;
     border: none;
+    width: 25px;
   }
 
   &.swordle-tile-green {
-    background-color: green;
-    border-color: darkgreen;
+    background-color: #88b976;
+    border-color: #5f974a;
+    border-width: 1px;
   }
   &.swordle-tile-yellow {
-    background-color: yellow;
-    border-color: darkgoldenrod;
+    background-color: #bdb347;
+    border-color: #968e2e;
+    border-width: 1px;
   }
   &.swordle-tile-gray {
-    background-color: gray;
-    border-color: rgb(83, 83, 83);
+    background-color: tokens.$colors-gray-500;
+    border-color: tokens.$colors-gray-600;
+    border-width: 1px;
   }
 }
 

@@ -1,7 +1,7 @@
 import { CoreProps } from '../../core/types/utility'
 import { RenderComp } from '../core/render-comp.component'
 import { renderWithRef } from '../core/render-with-ref'
-import { GridContainer, Row, Column } from '../grid'
+import { GridContainer, Row, Column, Text } from '../'
 import SwordleTile from './swordle-tile.component'
 import { useSwordle } from './swordle.context'
 
@@ -11,7 +11,7 @@ export type SwordleGuessesProps = Omit<CoreProps<JSX.IntrinsicElements['div'], H
 
 const SwordleGuesses = renderWithRef<HTMLDivElement, SwordleGuessesProps>('SwordleGuesses', (props, ref) => {
   const { currentWord, currentGuess, wordLength, maxTurns, turn, formattedGuesses } = useSwordle()
-
+  const wordLengthWithSpaces = currentWord.length
   const spaceIndexes = currentWord
     .split('')
     .map((char, i) => (char === ' ' ? i : -1))
@@ -35,14 +35,22 @@ const SwordleGuesses = renderWithRef<HTMLDivElement, SwordleGuessesProps>('Sword
                         <SwordleTile color="space">{''}</SwordleTile>
                       </Column>
                       <Column key={`letter-${j}`} className={`swordle-letter`}>
-                        <SwordleTile color={letter.color}>{letter.key}</SwordleTile>
+                        <SwordleTile color={letter.color}>
+                          <Text size="lg" weight="bold" color="colors-cream-100">
+                            {letter.key}
+                          </Text>
+                        </SwordleTile>
                       </Column>
                     </>
                   )
                 }
                 return (
                   <Column key={`letter-${j}`} className={`swordle-letter`}>
-                    <SwordleTile color={letter.color}>{letter.key}</SwordleTile>
+                    <SwordleTile color={letter.color}>
+                      <Text size="lg" weight="bold" color="colors-cream-100">
+                        {letter.key}
+                      </Text>
+                    </SwordleTile>
                   </Column>
                 )
               })}
@@ -61,14 +69,22 @@ const SwordleGuesses = renderWithRef<HTMLDivElement, SwordleGuessesProps>('Sword
                         <SwordleTile color="space">{''}</SwordleTile>
                       </Column>
                       <Column key={`letter-${j}`} className={`swordle-letter`}>
-                        <SwordleTile color="empty">{currentGuess[j] || ''}</SwordleTile>
+                        <SwordleTile color="empty">
+                          <Text size="lg" weight="bold">
+                            {currentGuess[j] || ''}
+                          </Text>
+                        </SwordleTile>
                       </Column>
                     </>
                   )
                 }
                 return (
                   <Column key={`letter-${j}`} className={`swordle-letter`}>
-                    <SwordleTile color="empty">{currentGuess[j] || ''}</SwordleTile>
+                    <SwordleTile color="empty">
+                      <Text size="lg" weight="bold">
+                        {currentGuess[j] || ''}
+                      </Text>
+                    </SwordleTile>
                   </Column>
                 )
               })}

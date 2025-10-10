@@ -69,7 +69,7 @@ export const SwordleContextProvider = (props: SwordleContextProps) => {
     let solutionArray = currentWord.replace(/ /g, '').split('')
 
     formattedGuess = guessArray.map(letter => {
-      return { key: letter, color: 'grey' }
+      return { key: letter, color: 'gray' }
     })
 
     // find any green letters
