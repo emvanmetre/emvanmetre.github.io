@@ -17,7 +17,7 @@
     "dev": "vite",
     "deploy": "npm run build && gh-pages -d build",
     "preview": "vite preview",
-    "start": "concurrently \"npm run style-build:watch\" \"npm run dev\"",
+    "start": "npm run build && concurrently \"npm run style-build:watch\" \"npm run dev\"",
     "build": "npm run style-build && vite build",
     "style-build:watch": "node scripts-js/watch.js",
     "style-build": "npx tsc --outDir ./build && node scripts-js/export-tokens.js && node scripts-js/compile-scss.js",
