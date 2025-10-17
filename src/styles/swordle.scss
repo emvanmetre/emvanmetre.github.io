@@ -4,10 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 70px;
-  height: 70px;
+  width: auto;
+  aspect-ratio: 1 / 1;
   background-color: white;
   border: 2px solid tokens.$colors-gray-400;
+  margin: 0;
 
   &:has(span:not(:empty)) {
     border-color: tokens.$colors-gray-600;
@@ -23,16 +24,19 @@
     background-color: #88b976;
     border-color: #5f974a;
     border-width: 1px;
+    margin: 1px;
   }
   &.swordle-tile-yellow {
     background-color: #bdb347;
     border-color: #968e2e;
     border-width: 1px;
+    margin: 1px;
   }
   &.swordle-tile-gray {
     background-color: tokens.$colors-gray-500;
     border-color: tokens.$colors-gray-600;
     border-width: 1px;
+    margin: 1px;
   }
 }
 
@@ -42,4 +46,5 @@
   align-items: center;
   justify-content: center;
   margin: tokens.$size-sem-content-margin;
+  min-width: 300px;
 }
